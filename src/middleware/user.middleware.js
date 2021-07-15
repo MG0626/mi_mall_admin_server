@@ -13,7 +13,6 @@ const verifyUser = async (ctx, next) => {
   const user = ctx.request.body;
   // 判断是否为空，并且发出对应的错误信息
   for(let key of Object.keys(user)){
-    console.log(key);
     // trim()去除字符串首尾空格
     if (!user[key].trim()) {
       let type;

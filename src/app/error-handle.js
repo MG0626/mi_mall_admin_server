@@ -19,7 +19,25 @@ const errorHandle = (error, ctx) => {
       message = '邮箱格式不正确！';
       break;
     case errorTypes.USER_ALREADY_EXISTS:
-      message = "用户已存在！"
+      message = "用户已存在！";
+      break;
+    case errorTypes.USER_DOES_NOT_EXIST:
+      message = "用户不存在！";
+      break;
+    case errorTypes.PASSWORD_ERROR:
+      message = "密码错误！";
+      break;
+    case errorTypes.TOKEN_MUST_BE_PROVIDED:
+      status = 401;
+      message = "没有权限访问！";
+      break;
+    case errorTypes.INVALID_TOKEN:
+      status = 401;
+      message = "token是无效的!";
+      break;
+    case errorTypes.TOKEN_EXPIRED:
+      status = 401;
+      message = "token已过期!";
       break;
     default:
       status = 404;
