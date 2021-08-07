@@ -18,10 +18,9 @@ class authController {
       const error = new Error(errorTypes.PASSWORD_ERROR);
       return ctx.app.emit('error', error, ctx);
     }
-
     // 颁发token
-    const { id, name, email } = result[0];
-    const token = jwt.sign({ id, name, email }, PRIVATE_KEY, {
+    const { id, name, email, role_id } = result[0];
+    const token = jwt.sign({ id, name, email, role_id }, PRIVATE_KEY, {
       expiresIn: 60 * 60 * 24, // 过期时间
       algorithm: 'RS256'
     });
@@ -31,6 +30,13 @@ class authController {
       ...result[0],
       token
     };
+  }
+
+  // 获取导航栏菜单
+  async menus(ctx){
+    const { id } = ctx.params;
+    const result = await service.getMenus(id);
+    ctx.body = result;
   }
 }
 

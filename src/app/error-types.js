@@ -18,6 +18,22 @@ const TOKEN_MUST_BE_PROVIDED = "token_must_be_provided"
 const INVALID_TOKEN = "invalid_token";
 // token已过期
 const TOKEN_EXPIRED = "token_expired";
+// 文件未上传
+const FILE_NOT_UPLOADED = "file_not_uploaded";
+// 请求没有携带数据
+const NO_DATA = "no_data";
+// 参数不完全
+const INCOMPLETE_PARAMETERS = "incomplete_parameters";
+// 参数不能为空
+const PARAMETER_CANNOT_BE_EMPTY = "parameter_cannot_be_empty";
+// 参数不合法
+const INVALID_PARAMETER = "invalid_parameter";
+// 没有权限访问
+const NO_PERMISSION_TO_ACCESS = "no_permission_to_access";
+// 用户已停用
+const USER_HAS_BEEN_DEACTIVATED = "user_has_been_deactivated";
+// 接口已停用
+const INTERFACE_IS_DISABLED = "interface_is_disabled";
 
 
 module.exports = {
@@ -31,4 +47,12 @@ module.exports = {
   TOKEN_MUST_BE_PROVIDED,
   INVALID_TOKEN,
   TOKEN_EXPIRED,
+  FILE_NOT_UPLOADED,
+  NO_DATA,
+  INCOMPLETE_PARAMETERS,
+  PARAMETER_CANNOT_BE_EMPTY,
+  INVALID_PARAMETER,
+  NO_PERMISSION_TO_ACCESS,
+  USER_HAS_BEEN_DEACTIVATED,
+  INTERFACE_IS_DISABLED
 }

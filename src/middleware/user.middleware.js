@@ -40,7 +40,7 @@ const verifyUser = async (ctx, next) => {
   }
   // 判断信息是否被注册过
   //查询用户名或邮箱有没有被注册过
-  const result = await service.getUserInfo(user);
+  const result = await service.getByName(user);
   if (result.length) {
     const error = new Error(errorTypes.USER_ALREADY_EXISTS);
     return ctx.app.emit('error', error, ctx);
